@@ -32,7 +32,7 @@ jobs:
 
     - name: Create distribution package
       run: |
-        mkdir -p dist
+        python -c "import os; os.makedirs('dist', exist_ok=True)"
         cp config.ini dist/config.ini
         cp README.md dist/ || echo "README.md not found, skipping"
 
