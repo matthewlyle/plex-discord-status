@@ -23,7 +23,7 @@ def load_config():
             'plex_token': config['plex']['token'],
             'plex_username': config['plex']['username'],
             'discord_client_id': config['discord']['client_id'],
-            'poll_interval': int(config.get('app', 'interval', fallback='30'))
+            'poll_interval': int(config.get('app', 'interval', fallback='30').strip().split('#')[0].strip())
         }
     except KeyError as e:
         print(f"[ERROR] Missing config value: {e}")
