@@ -8,9 +8,6 @@ build/
 dist/
 *.spec
 
-# Config files (users should create their own)
-config.ini
-
 # Logs
 *.log
 
