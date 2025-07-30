@@ -76,9 +76,9 @@ jobs:
       uses: softprops/action-gh-release@v2
       with:
         files: |
-          PlexDiscordStatus-Windows-X64/PlexDiscordStatus-Windows-x64.zip
-          PlexDiscordStatus-macOS-ARM64/PlexDiscordStatus-macOS-x64.zip
-          PlexDiscordStatus-Linux-X64/PlexDiscordStatus-Linux-x64.zip
+          PlexDiscordStatus-Windows-X64/PlexDiscordStatus-Windows-X64.zip
+          PlexDiscordStatus-macOS-ARM64/PlexDiscordStatus-macOS-ARM64.zip
+          PlexDiscordStatus-Linux-X64/PlexDiscordStatus-Linux-X64.zip
         draft: false
         prerelease: false
         generate_release_notes: true
