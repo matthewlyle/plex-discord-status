@@ -12,7 +12,7 @@ A simple python script that polls a Plex server and updates a Discord profile wi
 ### Limitations 
 There are several limitations due to this using the Discord Presence API as opposed to being an official integration like Spotify has.
 
-1. It will always say "Playing {appName}" rather than `Listening to` or `Watching`. 
+1. It will always say `Playing {appName}` rather than `Listening to` or `Watching`. 
 2. It can only have one application image, i.e it can't show the artwork associated with the playing item 
 3. The plugin only works with content from the server specified in config.ini. Not Live TV, AVOD, content from other servers, etc. 
 4. The script has to be running
