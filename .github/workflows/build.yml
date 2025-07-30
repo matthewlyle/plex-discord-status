@@ -65,15 +65,20 @@ jobs:
       uses: actions/download-artifact@v4
       
     - name: List downloaded files
-      run: ls -la
+      run: |
+        ls -la
+        echo "=== Contents of each directory ==="
+        ls -la PlexDiscordStatus-Windows-X64/
+        ls -la PlexDiscordStatus-macOS-ARM64/
+        ls -la PlexDiscordStatus-Linux-X64/
       
     - name: Create Release
       uses: softprops/action-gh-release@v2
       with:
         files: |
-          PlexDiscordStatus-Windows-x64/PlexDiscordStatus-Windows-x64.zip
-          PlexDiscordStatus-macOS-x64/PlexDiscordStatus-macOS-x64.zip
-          PlexDiscordStatus-Linux-x64/PlexDiscordStatus-Linux-x64.zip
+          PlexDiscordStatus-Windows-X64/PlexDiscordStatus-Windows-x64.zip
+          PlexDiscordStatus-macOS-ARM64/PlexDiscordStatus-macOS-x64.zip
+          PlexDiscordStatus-Linux-X64/PlexDiscordStatus-Linux-x64.zip
         draft: false
         prerelease: false
         generate_release_notes: true
