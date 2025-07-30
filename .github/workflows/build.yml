@@ -36,13 +36,13 @@ jobs:
         cp config.ini dist/config.ini
         cp README.md dist/ || echo "README.md not found, skipping"
 
-    - name: Create zip package
-      run: |
-        if [ "$RUNNER_OS" = "Windows" ]; then
-          powershell Compress-Archive -Path dist/* -DestinationPath PlexDiscordStatus-Windows-x64.zip
-        else
-          cd dist && zip -r ../PlexDiscordStatus-${{ runner.os }}-${{ runner.arch }}.zip .
-        fi
+    - name: Create zip package (Windows)
+      if: runner.os == 'Windows'
+      run: powershell Compress-Archive -Path dist/* -DestinationPath PlexDiscordStatus-Windows-x64.zip
+
+    - name: Create zip package (macOS/Linux)
+      if: runner.os != 'Windows'
+      run: cd dist && zip -r ../PlexDiscordStatus-${{ runner.os }}-${{ runner.arch }}.zip .
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
